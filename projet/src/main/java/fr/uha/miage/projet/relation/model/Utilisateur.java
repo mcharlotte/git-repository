@@ -1,20 +1,31 @@
 package fr.uha.miage.projet.relation.model;
 
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
-public class Utilisateur {
+public class Utilisateur  /*implements Serializable*/{
 	
+
 	@Id
-	@GeneratedValue
+	@Column(name="idutilisateur")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String pseudo;
 	private String password;
 	private int droit;
 	private String email;
+
+
 	public int getId() {
 		return id;
 	}
