@@ -1,16 +1,11 @@
 package fr.uha.miage.projet.relation.model;
 
-import java.util.List;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
 
 @Entity
 public class Reservation{
@@ -19,15 +14,11 @@ public class Reservation{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	/*@Id
-	@OneToMany
-	@JoinColumn(name="idutilisateur")
-	private int id_util;
+	@OneToOne
+	private Utilisateur utilisateur ;
 	
-	@Id
-	@OneToMany
-	@JoinColumn(name="idtournoi")
-	private int id_tour;*/
+	@OneToOne
+	private Tournoi tournoi ;
 
 	public int getId() {
 		return id;
@@ -36,6 +27,26 @@ public class Reservation{
 	public void setId(int id) {
 		this.id = id;
 	}
+
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+
+	public Tournoi getTournoi() {
+		return tournoi;
+	}
+
+	public void setTournoi(Tournoi tournoi) {
+		this.tournoi = tournoi;
+	}
+
+	
+
+
 
 	
 	

@@ -1,26 +1,23 @@
 package fr.uha.miage.projet.relation.model;
 
 import java.io.Serializable;
-//import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
-import java.util.List;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
-public class Tournoi /*implements Serializable*/{
+public class Tournoi implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="idtournoi")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
+	@OneToOne(mappedBy="tournoi")
+	private Reservation reservation;
 
 	
 	private String lieu;
@@ -32,10 +29,18 @@ public class Tournoi /*implements Serializable*/{
 	private SimpleDateFormat heure_debut = new SimpleDateFormat("hh:mm");
 	private SimpleDateFormat heure_fin = new SimpleDateFormat("hh:mm");*/
 
-
+	
 
 	public int getId() {
 		return id;
+	}
+
+	public Reservation getReservation() {
+		return reservation;
+	}
+
+	public void setReservation(Reservation reservation) {
+		this.reservation = reservation;
 	}
 
 	public void setId(int id) {

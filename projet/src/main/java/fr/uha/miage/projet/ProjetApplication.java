@@ -14,7 +14,7 @@ import fr.uha.miage.projet.relation.repository.UtilisateurRepository;
 
 @SpringBootApplication
 public class ProjetApplication implements CommandLineRunner{
-/*
+
 	@Autowired
 	private TournoiRepository tournoiRepository;
 	
@@ -24,7 +24,7 @@ public class ProjetApplication implements CommandLineRunner{
 	@Autowired
 	private ReservationRepository reservationRepository;
 	
-	*/
+	
 	
     public static void main(String[] args) {
        SpringApplication.run(ProjetApplication.class, args);
@@ -34,7 +34,7 @@ public class ProjetApplication implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		
 		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-		/*Tournoi t1 = new Tournoi();
+		Tournoi t1 = new Tournoi();
 		t1.setLieu("ici");
 		t1.setNb_joueur_max(5);
 		t1.setPrice(12.5);
@@ -50,7 +50,7 @@ public class ProjetApplication implements CommandLineRunner{
 		Reservation r1 = new Reservation();
 		reservationRepository.save(r1);
 		
-		System.out.println("Réservation id : "+r1.getId());*/
+		System.out.println("Réservation id : "+r1.getId());
 	}
 }
 
