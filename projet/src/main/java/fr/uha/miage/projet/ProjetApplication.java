@@ -33,24 +33,29 @@ public class ProjetApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
-		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		Tournoi t1 = new Tournoi();
 		t1.setLieu("ici");
 		t1.setNb_joueur_max(5);
 		t1.setPrice(12.5);
+		t1.setType("Tennis");
 		tournoiRepository.save(t1);
 		
-		System.out.println("??????????????????????????????????????????");
+	
 		Utilisateur u1 = new Utilisateur();
 		u1.setPseudo("test");
 		u1.setPassword("cc");
 		utilisateurRepository.save(u1);
 		
-		System.out.println("..........................................");
+		
 		Reservation r1 = new Reservation();
+		r1.setTournoi(t1);
+		r1.setUtilisateur(u1);
 		reservationRepository.save(r1);
 		
 		System.out.println("Réservation id : "+r1.getId());
+		System.out.println("Réservation tournoi : "+r1.getTournoi().getType());
+		System.out.println("Réservation utilisateur : "+r1.getUtilisateur().getPseudo());
+		
 	}
 }
 
