@@ -21,14 +21,14 @@ public class Tournoi implements Serializable{
 
 	
 	private String lieu;
-	//private BigDecimal price;
 	private double price;
 	private String type;
 	private int nb_joueur_max;
-	/*private SimpleDateFormat date_tournoi = new SimpleDateFormat("MM/yyyy");;
-	private SimpleDateFormat heure_debut = new SimpleDateFormat("hh:mm");
-	private SimpleDateFormat heure_fin = new SimpleDateFormat("hh:mm");*/
-
+	private int jour;
+	private int mois;
+	private int annee;
+	private int minute;
+	private int heure;
 	
 
 	public int getId() {
@@ -79,5 +79,51 @@ public class Tournoi implements Serializable{
 	public void setLieu(String lieu) {
 		this.lieu = lieu;
 	}
+
+	public int getJour() {
+		return jour;
+	}
+
+	public void setJour(int jour) {
+		this.jour = jour;
+	}
+
+	public int getMois() {
+		return mois;
+	}
+
+	public void setMois(int mois) {
+		this.mois = mois;
+	}
+
+	public int getAnnee() {
+		return annee;
+	}
+
+	public void setAnnee(int annee) {
+		this.annee = annee;
+	}
+
+	public int getMinute() {
+		return minute;
+	}
+
+	public void setMinute(int minute) {
+		this.minute = minute;
+	}
+
+	public int getHeure() {
+		return heure;
+	}
+
+	public void setHeure(int heure) {
+		this.heure = heure;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
 	
 }
