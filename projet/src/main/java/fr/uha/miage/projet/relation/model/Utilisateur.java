@@ -21,6 +21,7 @@ public class Utilisateur  implements Serializable{
 	
 	private String pseudo;
 	private String password;
+	//par défaut 0 = utilisateur, 1 = admin
 	private int droit;
 	private String email;
 
