@@ -52,9 +52,7 @@ public class ProjetApplication implements CommandLineRunner{
 		r1.setUtilisateur(u1);
 		reservationRepository.save(r1);
 		
-		System.out.println("Réservation id : "+r1.getId());
-		System.out.println("Réservation tournoi : "+r1.getTournoi().getType());
-		System.out.println("Réservation utilisateur : "+r1.getUtilisateur().getPseudo());
+		
 		
 	}
 }
