@@ -20,7 +20,7 @@ public class Utilisateur  implements Serializable{
 	private Reservation reservation;
 	
 	private String pseudo;
-	private String password;
+	private String motDePasse;
 	//par défaut 0 = utilisateur, 1 = admin
 	private int droit;
 	private String email;
@@ -45,10 +45,10 @@ public class Utilisateur  implements Serializable{
 		this.pseudo = pseudo;
 	}
 	public String getPassword() {
-		return password;
+		return motDePasse;
 	}
 	public void setPassword(String password) {
-		this.password = password;
+		this.motDePasse = password;
 	}
 	public int getDroit() {
 		return droit;

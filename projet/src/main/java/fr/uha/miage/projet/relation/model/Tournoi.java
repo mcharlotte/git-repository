@@ -21,9 +21,9 @@ public class Tournoi implements Serializable{
 
 	
 	private String lieu;
-	private double price;
+	private double prix;
 	private String type;
-	private int nb_joueur_max;
+	private int nbJoueurMax;
 	private int jour;
 	private int mois;
 	private int annee;
@@ -52,11 +52,11 @@ public class Tournoi implements Serializable{
 	}
 
 	public double getPrice() {
-		return price;
+		return prix;
 	}
 
 	public void setPrice(double price) {
-		this.price = price;
+		this.prix = price;
 	}
 
 	public String getType() {
@@ -68,11 +68,11 @@ public class Tournoi implements Serializable{
 	}
 
 	public int getNb_joueur_max() {
-		return nb_joueur_max;
+		return nbJoueurMax;
 	}
 
 	public void setNb_joueur_max(int nb_joueur_max) {
-		this.nb_joueur_max = nb_joueur_max;
+		this.nbJoueurMax = nb_joueur_max;
 	}
 
 
