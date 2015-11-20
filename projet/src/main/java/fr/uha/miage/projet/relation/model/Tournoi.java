@@ -51,12 +51,12 @@ public class Tournoi implements Serializable{
 		return lieu;
 	}
 
-	public double getPrice() {
+	public double getPrix() {
 		return prix;
 	}
 
-	public void setPrice(double price) {
-		this.prix = price;
+	public void setPrix(double prix) {
+		this.prix = prix;
 	}
 
 	public String getType() {
