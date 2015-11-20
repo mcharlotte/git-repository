@@ -35,7 +35,7 @@ public class ProjetApplication implements CommandLineRunner{
 		
 		Tournoi t1 = new Tournoi();
 		t1.setLieu("ici");
-		t1.setNb_joueur_max(5);
+		t1.setNbJoueurMax(5);
 		t1.setPrice(12.5);
 		t1.setType("Tennis");
 		tournoiRepository.save(t1);
@@ -43,7 +43,7 @@ public class ProjetApplication implements CommandLineRunner{
 	
 		Utilisateur u1 = new Utilisateur();
 		u1.setPseudo("test");
-		u1.setPassword("cc");
+		u1.setMotDePasse("test");
 		utilisateurRepository.save(u1);
 		
 		

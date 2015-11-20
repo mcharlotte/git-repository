@@ -14,7 +14,7 @@ public class InscriptionController {
 	@Autowired
 	UtilisateurRepository utilisateur;
 	
-
+	
 	@RequestMapping("/Inscription")
 	public String requestCreation(Model model)
 	{
@@ -22,9 +22,22 @@ public class InscriptionController {
 		return "Inscription";
 	}	
 	
+	
 	@RequestMapping(value="/Inscription", method=RequestMethod.POST)
     public String inscription(Utilisateur u) {
-        utilisateur.save(u);
-        return "redirect:/Home";
+		
+		System.out.print(u.getMotDePasseConfirm()+ " "+ u.getMotDePasse());
+		if(u.getMotDePasseConfirm().equals(u.getMotDePasse()) )
+		{
+			utilisateur.save(u);
+			return "redirect:/Home";
+		}
+        
+		else 
+		{
+			//je sais pas encore
+			return "Inscription";
+		}
+        
     }
 }

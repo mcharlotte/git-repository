@@ -67,12 +67,12 @@ public class Tournoi implements Serializable{
 		this.type = type;
 	}
 
-	public int getNb_joueur_max() {
+	public int getNbJoueurMax() {
 		return nbJoueurMax;
 	}
 
-	public void setNb_joueur_max(int nb_joueur_max) {
-		this.nbJoueurMax = nb_joueur_max;
+	public void setNbJoueurMax(int nbJoueurMax) {
+		this.nbJoueurMax = nbJoueurMax;
 	}
 
 

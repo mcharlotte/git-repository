@@ -21,11 +21,23 @@ public class Utilisateur  implements Serializable{
 	
 	private String pseudo;
 	private String motDePasse;
+	private String motDePasseConfirm;
 	//par défaut 0 = utilisateur, 1 = admin
 	private int droit;
 	private String email;
 
 	
+	
+	
+	public String getMotDePasseConfirm() {
+		return motDePasseConfirm;
+	}
+	public void setMotDePasseConfirm(String motDePasseConfirm) {
+		this.motDePasseConfirm = motDePasseConfirm;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	public Reservation getReservation() {
 		return reservation;
 	}
@@ -44,11 +56,11 @@ public class Utilisateur  implements Serializable{
 	public void setPseudo(String pseudo) {
 		this.pseudo = pseudo;
 	}
-	public String getPassword() {
+	public String getMotDePasse() {
 		return motDePasse;
 	}
-	public void setPassword(String password) {
-		this.motDePasse = password;
+	public void setMotDePasse(String motDePasse) {
+		this.motDePasse = motDePasse;
 	}
 	public int getDroit() {
 		return droit;
