@@ -1,13 +1,14 @@
 package fr.uha.miage.projet.relation.model;
 
 import java.io.Serializable;
-
-import javax.persistence.CascadeType;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
+
 
 @Entity
 public class Utilisateur  implements Serializable{
@@ -18,8 +19,8 @@ public class Utilisateur  implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@OneToOne(mappedBy="utilisateur")
-	private Reservation reservation;
+	@OneToMany(mappedBy="utilisateur")
+	private List<Reservation> reservations = new ArrayList<Reservation>();
 	
 	private String pseudo;
 	private String motDePasse;
@@ -40,11 +41,12 @@ public class Utilisateur  implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	public Reservation getReservation() {
-		return reservation;
+	
+	public List<Reservation> getReservations() {
+		return reservations;
 	}
-	public void setReservation(Reservation reservation) {
-		this.reservation = reservation;
+	public void setReservations(List<Reservation> reservations) {
+		this.reservations = reservations;
 	}
 	public int getId() {
 		return id;

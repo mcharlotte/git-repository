@@ -36,6 +36,7 @@ public class HomeController {
 		//model.addAttribute("tournoi",new Tournoi());
 		
 		model.addAttribute("tournoi", tournoi.findAll());
+		System.out.print(tournoi.findOne(1));
     	return "Home";
     }
 	

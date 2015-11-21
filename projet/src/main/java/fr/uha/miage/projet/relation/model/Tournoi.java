@@ -1,13 +1,16 @@
 package fr.uha.miage.projet.relation.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
+
 
 @Entity
 public class Tournoi implements Serializable{
@@ -18,8 +21,8 @@ public class Tournoi implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@OneToOne(mappedBy="tournoi")
-	private Reservation reservation;
+	@OneToMany(mappedBy="tournoi")
+	private List<Reservation> reservations = new ArrayList<Reservation>();
 
 	
 	private String lieu;
@@ -37,13 +40,15 @@ public class Tournoi implements Serializable{
 		return id;
 	}
 
-	public Reservation getReservation() {
-		return reservation;
+	public List<Reservation> getReservations() {
+		return reservations;
 	}
 
-	public void setReservation(Reservation reservation) {
-		this.reservation = reservation;
+	public void setReservations(List<Reservation> reservations) {
+		this.reservations = reservations;
 	}
+
+
 
 	public void setId(int id) {
 		this.id = id;
