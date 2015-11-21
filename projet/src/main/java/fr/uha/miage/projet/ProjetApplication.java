@@ -110,7 +110,16 @@ public class ProjetApplication implements CommandLineRunner{
 		
 		// Charlotte - Badminton
 		Reservation r12 = new Reservation(); r12.setTournoi(t3); r12.setUtilisateur(u3); reservationRepository.save(r12);
+	
 		
+		
+		System.out.print("!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+		System.out.print(tournoiRepository.count()+"\n");
+		System.out.print(utilisateurRepository.count()+"\n");
+		System.out.print(reservationRepository.count()+"\n");
+		//System.out.print(tournoiRepository.findAll()+"\n");
+		//System.out.print(reservationRepository.findAll()+"\n");
+
 	}
 }
 
