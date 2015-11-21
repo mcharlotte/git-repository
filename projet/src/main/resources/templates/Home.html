@@ -7,7 +7,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
 
-    <title>Kishishishi</title>
+    <title>Accueil</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css"/>
@@ -27,9 +27,9 @@
   <body id="page-top">
   
   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
+      <div class="container-fluid">
+           <!--  Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header"> 
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -74,19 +74,24 @@
     </header>
 
     <section id="search">			<!-- class="bg-primary"-->
-        <div >						<!-- class="container"-->
-            <div class="row">
-                Choississez un type de tournoi<br/>
-                <select name="decision">
-						<option>Troll à deux têtes</option>
-						<option>Draft</option>
-						<option>des</option>
-						<option>trucs en</option>
-						<option>dur</option>
-				</select> 
-                <input type="search" placeholder="Choissisez un type de tournoi" name="the_search"/>
-            </div>
-        </div>
+       						<!-- class="container"-->
+            <table class="table">
+				<tr>
+					<td>Nom</td>
+					<td>Date</td>
+					<td>Lieu</td>
+					<td>Nombre de participant maximum</td>
+					<td>Prix</td>	
+				</tr>
+				<tr th:each="tournoi : ${tournoi}">
+					<td th:text="${tournoi.type}"> </td>
+					<td th:text="${tournoi.lieu}"> </td>
+					<td th:text="${tournoi.jour}+'/'+${tournoi.mois}+'/'+${tournoi.annee}+' '+${tournoi.heure}+'h'+${tournoi.minute}"> </td>
+					<td th:text="${tournoi.nbMaxJoueur}"> </td>
+					<td th:text="${tournoi.prix}"> </td>
+				</tr>
+			</table>
+       
     </section>
 
     <section id="recap">
