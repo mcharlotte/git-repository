@@ -1,5 +1,6 @@
 package fr.uha.miage.projet.relation.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,10 +15,10 @@ public class Reservation{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@OneToOne
+	@OneToOne(cascade=CascadeType.REMOVE)
 	private Utilisateur utilisateur ;
 	
-	@OneToOne
+	@OneToOne(cascade=CascadeType.REMOVE)
 	private Tournoi tournoi ;
 
 	public int getId() {

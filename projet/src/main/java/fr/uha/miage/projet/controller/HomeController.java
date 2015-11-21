@@ -33,7 +33,14 @@ public class HomeController {
 	
 	
 	@RequestMapping(value="/Home", method=RequestMethod.GET)
-    public String listeTournois(Model model) {
+    public String listeTournoisAvantCo(Model model,HttpSession session) {
+		
+		model.addAttribute("tournoi", tournoi.findAll());
+    	return "Home";
+    }
+	
+	@RequestMapping(value="/Home", method=RequestMethod.POST)
+    public String listeTournoisApresCo(Model model,HttpSession session) {
 		
 		model.addAttribute("tournoi", tournoi.findAll());
     	return "Home";
