@@ -31,21 +31,11 @@ public class HomeController {
 	@Autowired
 	ReservationRepository reservation;
 	
-	@RequestMapping("/Home")
-    public String requestListProduct(Model model) {
-		//model.addAttribute("tournoi",new Tournoi());
-		
-		model.addAttribute("tournoi", tournoi.findAll());
-		System.out.print(tournoi.findOne(1));
-    	return "Home";
-    }
-	
 	
 	@RequestMapping(value="/Home", method=RequestMethod.GET)
-    public String showForm(HttpSession session,Model model) {
+    public String listeTournois(Model model) {
 		
-		//model.addAttribute("tournoi", tournoi.findAll());
-		
+		model.addAttribute("tournoi", tournoi.findAll());
     	return "Home";
     }
 
