@@ -118,7 +118,7 @@ public class ProjetApplication implements CommandLineRunner{
 		System.out.print(tournoiRepository.count()+"\n");
 		System.out.print(utilisateurRepository.count()+"\n");
 		System.out.print(reservationRepository.count()+"\n");
-		System.out.print(tournoiRepository.findAll()+"\n");
+		//System.out.print(tournoiRepository.findAll()+"\n");
 		//System.out.print(reservationRepository.findAll()+"\n");
 	}
 }
