@@ -3,6 +3,8 @@ package fr.uha.miage.projet.relation.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +21,7 @@ public class Utilisateur  implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@OneToMany(mappedBy="utilisateur")
+	@OneToMany(mappedBy="utilisateur",cascade=CascadeType.REMOVE)
 	private List<Reservation> reservations = new ArrayList<Reservation>();
 	
 	private String pseudo;
