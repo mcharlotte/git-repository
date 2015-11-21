@@ -7,7 +7,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
 
-    <title>Accueil</title>
+    <title>Gestion des tournois</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css"/>
@@ -43,13 +43,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#search">Recherche</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#recap">Tournois récents</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Partenaires</a>
+                        <a href="@{'/Home}" class="page-scroll">Accueil</a>
                     </li>
                     <li>
                         <a href="Inscription.html" class="page-scroll">Inscription</a>
@@ -58,13 +52,14 @@
                         <a href="Connexion.html"  class="page-scroll">Connexion</a>
                     </li>
                 </ul>
-            </div><div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a th:href="@'/adminTournois" class="page-scroll">Gestion des Tournois</a>
+                        <a th:href="@{'/adminTournois}" class="page-scroll">Gestion des Tournois</a>
                     </li>
                     <li>
-                        <a href="Connexion.html"  class="page-scroll">Connexion</a>
+                        <a href="@{'/adminUser}"  class="page-scroll">Gestion des Utilisateurs</a>
                     </li>
                 </ul>
             </div>
@@ -101,8 +96,17 @@
 					<td th:text="${tournoi.jour}+'/'+${tournoi.mois}+'/'+${tournoi.annee}+' '+${tournoi.heure}+'h'+${tournoi.minute}"> </td>
 					<td th:text="${tournoi.nbJoueurMax}"> </td>
 					<td th:text="${tournoi.prix}"> </td>
-					<td th:href="@{'/modif?id='+${tournoi.getId()}}">Modifier</td>
-					<td th:href="@{'/remove/'+${tournoi.getId()}}">Supprimer</td>
+					<td><a th:href="@{'/modifTournoi?id='+${tournoi.getId()}}">Modifier</a></td>
+					<td><a th:href="@{'/removeTournoi/'+${tournoi.getId()}}">Supprimer</a></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><a th:href="@{'/createTournoi}">Nouveau</a></td>
 				</tr>
 			</table>
        
