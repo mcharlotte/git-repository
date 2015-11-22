@@ -10,7 +10,7 @@ Si un administrateur se connecte il à en plus accès a la partie gestion qui lu
 
 Installation :
 - Depuis Eclipse, importer le projet Git grâce à l'URI suivant:  https://github.com/mcharlotte/git-repository.git
-  Les autorisations vous ont normalement été données, en cas de problème veuillez la responsable du repository à     l'adresse suivante: 
+  Les autorisations vous ont normalement été données, en cas de problème veuillez la responsable du repository à     l'adresse suivante: charlotte.messmer2@gmail.com
 - Une fois le projet importé, lancer "ProjetApplication.java" en tant qu'application java
 - Ouvrir un navigateur internet et acceder à la page localhost:8080/Home
 
