@@ -40,8 +40,8 @@ public class Reservation{
 		return tournoi;
 	}
 
-	public void setTournoi(Tournoi tournoi) {
-		this.tournoi = tournoi;
+	public void setTournoi(Tournoi tournoi2) {
+		this.tournoi = tournoi2;
 	}
 
 	

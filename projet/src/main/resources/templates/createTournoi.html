@@ -43,23 +43,19 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="@{'/Home}" class="page-scroll">Accueil</a>
+                        <a th:href="@{/HomeAdmin}" class="page-scroll">Accueil</a>
                     </li>
                     <li>
-                        <a href="Inscription.html" class="page-scroll">Inscription</a>
+                        <a th:href="@{/adminTournois}" class="page-scroll">Gestion des Tournois</a>
                     </li>
                     <li>
-                        <a href="Connexion.html"  class="page-scroll">Connexion</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a th:href="@{'/adminTournois}" class="page-scroll">Gestion des Tournois</a>
+                        <a th:href="@{/adminUser}"  class="page-scroll">Gestion des Utilisateurs</a>
                     </li>
                     <li>
-                        <a href="@{'/adminUser}"  class="page-scroll">Gestion des Utilisateurs</a>
+                    	<a th:href="@{/adminReserv}"  class="page-scroll">Gestion des Réservations</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/Home}" class="page-scroll">Déconnexion</a>
                     </li>
                 </ul>
             </div>
@@ -81,6 +77,10 @@
     <form th:object="${tourn_create}" method="POST">
 		<table>
 			<tr>
+				<td>Nom</td>
+				<td><input type="text" th:field="*{nom}" /></td>
+			</tr>
+			<tr>
 				<td>Lieu</td>
 				<td><input type="text" th:field="*{lieu}" /></td>
 			</tr>
@@ -98,17 +98,12 @@
 			</tr>
 			<tr>
 				<td>Date</td>
-				<td><input type="text" th:field="*{jour}" /></td>
-				<td>/</td>
-				<td><input type="text" th:field="*{mois}" /></td>
-				<td>/</td>
-				<td><input type="text" th:field="*{annee}" /></td>
-				<td></td>
-				<td><input type="text" th:field="*{heure}" /></td>
-				<td>h</td>
-				<td><input type="text" th:field="*{minute}" /></td>
+				<td><input type="text" th:field="*{jour}" />/<input type="text" th:field="*{mois}" />/<input type="text" th:field="*{annee}" /> à <input type="text" th:field="*{heure}" />h<input type="text" th:field="*{minute}" /></td>
 			</tr>
 			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
 				<td><button type="submit" class="btn btn-primary btn-lg active">Créer tournoi</button></td>
 			</tr>
 		</table>

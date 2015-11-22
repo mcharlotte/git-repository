@@ -43,18 +43,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a th:href="@{/Home}" class="page-scroll">Accueil</a>
+                        <a th:href="@{/HomeAdmin}" class="page-scroll">Accueil</a>
                     </li>
-                    <li>
-                        <a th:href="Inscription.html" class="page-scroll">Inscription</a>
-                    </li>
-                    <li>
-                        <a th:href="Connexion.html"  class="page-scroll">Connexion</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a th:href="@{/adminTournois}" class="page-scroll">Gestion des Tournois</a>
                     </li>
@@ -63,6 +53,9 @@
                     </li>
                     <li>
                     	<a th:href="@{/adminReserv}"  class="page-scroll">Gestion des Réservations</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/Home}" class="page-scroll">Déconnexion</a>
                     </li>
                 </ul>
             </div>
@@ -84,20 +77,15 @@
     <section id="search">			<!-- class="bg-primary"-->
        						<!-- class="container"-->
             <table class="table">
-				<tr>
+				<tr><!-- fr.uha.miage.projet.relation.model.Utilisateur@a762234 -->
 					<td>Utilisateur</td>
 					<td>Tournoi</td>
 					<td></td>
-					<td></td>
 				</tr>
-				<tr th:each="tournoi : ${tournoi}">
-					<td th:text="${tournoi.type}"> </td>
-					<td th:text="${tournoi.lieu}"> </td>
-					<td th:text="${tournoi.jour}+'/'+${tournoi.mois}+'/'+${tournoi.annee}+' '+${tournoi.heure}+'h'+${tournoi.minute}"> </td>
-					<td th:text="${tournoi.nbJoueurMax}"> </td>
-					<td th:text="${tournoi.prix}"> </td>
-					<td><a th:href="@{'/modifTournoi?id='+${tournoi.getId()}}">Modifier</a></td>
-					<td><a th:href="@{'/removeTournoi/'+${tournoi.getId()}}">Supprimer</a></td>
+				<tr th:each="reservation : ${reservation}">
+					<td th:text="${reservation.getUtilisateur().getPseudo()}"> </td>
+					<td th:text="${reservation.getTournoi().getNom()}"> </td>
+					<td><a th:href="@{'/removeReserv/'+${reservation.getId()}}">Supprimer</a></td>
 				</tr>
 			</table>
        
