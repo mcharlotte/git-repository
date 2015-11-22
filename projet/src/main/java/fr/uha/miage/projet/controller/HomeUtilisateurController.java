@@ -77,7 +77,7 @@ public class HomeUtilisateurController {
 	
 	@RequestMapping(value="/HomeUtilisateur", method=RequestMethod.POST)
 	public String Deconnexion(Utilisateur u, Model model) {
-		return "/Home";
+		return "redirect:/Home";
 	}
     
 	
