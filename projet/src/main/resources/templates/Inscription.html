@@ -3,24 +3,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 <title>Inscription</title>
-<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.css" type="text/css"/>
 </head>
-    <body background="../img/portfolio/Day.jpg">
+    <body background="../img/Day2.jpg" width="100%" height="100%" >
         <form th:object="${utilisateur}" method="post">
           <table>
-          	   <tr>
+          	   <tr class="tabletour">
 		            <td><label for="login"><strong>Nom de compte :</strong></label></td>
 		            <td><input type="text" th:field="*{pseudo}"/></td>
 	           </tr>
-	           <tr>
+	           <tr class="tabletour">
 		            <td><label for="adress"><strong>Adresse mail :</strong></label></td>
 		            <td><input type="text" th:field="*{email}"/></td>
 	            </tr>
-	            <tr>
+	            <tr class="tabletour">
 		            <td><label for="pass"><strong>Mot de passe :</strong></label></td>
 		            <td><input type="password" th:field="*{motDePasse}"/></td>
 	            </tr>
-	            <tr>
+	            <tr class="tabletour">
 		            <td> <label for="pass2"><strong>Confirmez le mot de passe :</strong></label></td>
 		            <td><input type="password" th:field="*{motDePasseConfirm}"/></td>
 		        </tr>

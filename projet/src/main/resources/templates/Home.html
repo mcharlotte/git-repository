@@ -10,7 +10,7 @@
     <title>Accueil</title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" type="text/css"/>
 
     <!-- Custom Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'/>
@@ -36,24 +36,24 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top"><img src="../img/portfolio/logo.jpg" width="30" height="30" BackColor="Transparent"/></a>
+               <!-- <a class="navbar-brand page-scroll" href="#page-top"><img src="../img/azorius.jpg" width="50" height="50" BackColor="Transparent"/></a>-->
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
              <form th:object="${utilisateur}" method="post">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right input input-lg">
                     <li>
-                    	<input  type="text" th:field="*{pseudo}"/>
+                    	<input type="text" placeholder="Login" th:field="*{pseudo}"/>
                     </li>
                     <li>
-                    	<input type="password" th:field="*{motDePasse}"/>
+                    	<input type="password" placeholder="Password" th:field="*{motDePasse}"/>
                     </li>
                     <li>
-                       <input  type="submit" name="connexion" value="Connexion" />
+                       <input class="btn" type="submit" name="connexion" value="Connexion" />
                     </li>
                     <li>
-                        <a href="Inscription.html" class="page-scroll">Inscription</a>
+                        <a href="Inscription.html">Inscription</a>
                     </li>
              <!--         <li>
                         <a class="page-scroll" href="#search">Recherche</a>
@@ -71,77 +71,18 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-    <header>
-      <img src="../img/header.jpg"/>
-      <!--   
-      		<div class="header-content">
+    <header class="header">
+      <img src="../img/header.jpg" height="100%" width="100%"/>
+   
+      	<div class="header-content">
             <div class="header-content-inner">
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <h1 font="bold">Bienvenue sur Jace</h1>
+                <hr/>
+                <h5 font="bold">Votre partenaire pour des tournois locaux de Magic l'Assemblée</h5>
             </div>
         </div>   
-      -->
     </header>
 
-    <section id="search">			<!-- class="bg-primary"-->
-       						<!-- class="container"-->
-           
-       
-    </section>
-
-    <section id="recap">
-        <img src="../img/portfolio/fondRecap.jpg"/> <!-- un background normalement -->
-       <!--  je sais pas encore comment mettre une bonne liste de résumé vu que plusieurs infos, 
-       j'avais pu en stage mais j'avais créé moi-même un type de composant, efficace mais long -->
-    </section>
-
-    
-    
-    <section class="no-padding" id="portfolio">
-        <div class="container-fluid">
-            <div class="row no-gutter">
-                <div class="col-lg-4 col-sm-6">
-                    <a href="http://www.9gag.com" class="portfolio-box">
-                        <img src="../img/portfolio/9gag.jpg" class="img-responsive" alt=""/>
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Lawlz
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="http://img0.ndsstatic.com/wallpapers/0539864a91f53aefe5e9f026b8b2ec1a_large.jpeg" class="portfolio-box">
-                        <img src="../img/portfolio/yeuh.jpg" class="img-responsive" alt=""/>
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Cuteness intensifies
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-<!--
-    <aside class="bg-dark">
-        <div class="container text-center">
-            <div class="call-to-action">
-                <h2>Free Download at Start Bootstrap!</h2>
-                <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
-            </div>
-        </div>
-    </aside>
--->
   
     <!-- jQuery -->
     <script src="../bootstrap/js/jquery.js"></script>
