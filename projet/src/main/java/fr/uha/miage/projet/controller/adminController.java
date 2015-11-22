@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import fr.uha.miage.projet.relation.model.Reservation;
 import fr.uha.miage.projet.relation.model.Tournoi;
 import fr.uha.miage.projet.relation.model.Utilisateur;
@@ -40,10 +39,10 @@ public class adminController {
     	return "adminTournois";
     }
 
-	@RequestMapping("/removeTournoi/{id}")
-    public String supprimerTournoi(@PathVariable("id") Integer idTournoi,HttpSession session)
+	@RequestMapping(value ="/removeTournoi/{id}", method = RequestMethod.GET)
+    public String supprimerTournoi(@PathVariable("id") Integer id)
     {
-    	tournoi.delete(idTournoi);
+    	tournoi.delete(id);
     	return "redirect:/adminTournois";
     }
 	
@@ -77,16 +76,16 @@ public class adminController {
     }
 	
 	@RequestMapping(value = "/createTournoi", method = RequestMethod.GET)
-	public String createTournoi(Model model,HttpSession session,RedirectAttributes redirectAttributes) 
+	public String createTournoi(Model model) 
 	{
 		model.addAttribute("tourn_create", new Tournoi());
 		return "createTournoi";
 	}
 	
 	@RequestMapping(value = "/createTournoi", method = RequestMethod.POST)
-	public String saveNewTournoi(Tournoi tourn_create,HttpSession session, RedirectAttributes redirectAttributes) 
+	public String saveNewTournoi(Tournoi t) 
 	{
-		tournoi.save(tourn_create);
+		tournoi.save(t);
 		return "redirect:/adminTournois";
 	}
 	
