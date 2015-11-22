@@ -97,7 +97,7 @@
 					<td th:text="${tournoi.jour}+'/'+${tournoi.mois}+'/'+${tournoi.annee}+' '+${tournoi.heure}+'h'+${tournoi.minute}"> </td>
 					<td th:text="${tournoi.nbJoueurMax}"> </td>
 					<td th:text="${tournoi.prix}"> </td>
-					<td> <a th:href="@{/inOut?id='+${tournoi.getId()}}" th:text="${inout}"></a></td>
+					<td> <a th:href="@{'/inOut?id='+${tournoi.getId()}}" th:text="${inout}"></a></td>
 				</tr>
 			</table>
        
