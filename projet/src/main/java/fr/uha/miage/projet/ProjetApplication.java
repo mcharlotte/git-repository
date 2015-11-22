@@ -50,17 +50,14 @@ public class ProjetApplication implements CommandLineRunner{
 		/*******************************************************************************************************************************/
 		/****************************************************** UTILISATEURS ***********************************************************/
 		/*******************************************************************************************************************************/
-		//droit admin
-		Utilisateur u1 = new Utilisateur(); u1.setPseudo("Jan"); u1.setMotDePasse("janmdp"); u1.setEmail("jan@uha.fr"); u1.setDroit(1);
+		
+		Utilisateur u1 = new Utilisateur(); u1.setPseudo("Jan"); u1.setMotDePasse("janmdp"); u1.setEmail("jan@uha.fr"); 
 		utilisateurRepository.save(u1);
 		
-		//droit admin
-		Utilisateur u2 = new Utilisateur(); u2.setPseudo("Gaël"); u2.setMotDePasse("gaelmdp"); u2.setEmail("gael@uha.fr"); u2.setDroit(1);
-		utilisateurRepository.save(u2);
+		Utilisateur u2 = new Utilisateur(); u2.setPseudo("Gaël"); u2.setMotDePasse("gaelmdp"); u2.setEmail("gael@uha.fr"); 
+		utilisateurRepository.save(u2);		
 		
-		//droit admin
-		Utilisateur u3 = new Utilisateur(); u3.setPseudo("Charlotte"); u3.setMotDePasse("charlottemdp"); u3.setEmail("charlotte@uha.fr"); u3.setDroit(1);
-		utilisateurRepository.save(u3);
+		Utilisateur u3 = new Utilisateur(); u3.setPseudo("Charlotte"); u3.setMotDePasse("charlottemdp"); u3.setEmail("charlotte@uha.fr"); 		utilisateurRepository.save(u3);
 		
 		Utilisateur u4 = new Utilisateur(); u4.setPseudo("Audrey"); u4.setMotDePasse("audreymdp"); u4.setEmail("audrey@uha.fr");
 		utilisateurRepository.save(u4);
@@ -70,6 +67,10 @@ public class ProjetApplication implements CommandLineRunner{
 		
 		Utilisateur u6 = new Utilisateur(); u6.setPseudo("Ralph"); u6.setMotDePasse("ralphmdp"); u6.setEmail("ralph@uha.fr");
 		utilisateurRepository.save(u6);
+		
+		//droit admin
+		Utilisateur u7 = new Utilisateur(); u7.setPseudo("Admin"); u7.setMotDePasse("admin"); u7.setEmail("admin@uha.fr"); u7.setDroit(1);
+		utilisateurRepository.save(u7);
 		
 		/*******************************************************************************************************************************/
 		/****************************************************** RÉSERVATIONS ***********************************************************/

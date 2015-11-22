@@ -26,18 +26,29 @@ public class InscriptionController {
 	@RequestMapping(value="/Inscription", method=RequestMethod.POST)
     public String inscription(Utilisateur u) {
 		
-		System.out.print(u.getMotDePasseConfirm()+ " "+ u.getMotDePasse());
-		if(u.getMotDePasseConfirm().equals(u.getMotDePasse()) )
+		
+		for(Utilisateur user : utilisateur.findAll())
 		{
-			utilisateur.save(u);
-			return "redirect:/Home";
+			//Cas où l'utilisateur n'est pas dans la base de donnée
+			if(!user.getPseudo().equals(u.getPseudo()) )
+			{
+				if(u.getMotDePasseConfirm().equals(u.getMotDePasse()) )
+				{
+					utilisateur.save(u);
+					return "redirect:/Home";
+				}
+		        
+				else 
+				{
+					//je sais pas encore
+					return "Inscription";
+				}
+				
+			}
 		}
-        
-		else 
-		{
-			//je sais pas encore
-			return "Inscription";
-		}
+		
+		//je sais pas encore
+		return "Inscription";
         
     }
 }
