@@ -36,15 +36,15 @@ public class ProjetApplication implements CommandLineRunner{
 		/****************************************************** TOURNOIS ***************************************************************/
 		/*******************************************************************************************************************************/
 		//Tournoi de Cartes à Mulhouse le 23/11/2015 à 17h30, 10 joueurs max, 4.5€
-		Tournoi t1 = new Tournoi(); t1.setLieu("Mulhouse"); t1.setNbJoueurMax(10); t1.setPrix(4.5); t1.setType("Cartes"); t1.setAnnee(2015); t1.setMois(11); t1.setJour(23); t1.setHeure(17); t1.setMinute(30);
+		Tournoi t1 = new Tournoi(); t1.setNom("Tournois amical de la MMA") ;t1.setLieu("Mulhouse"); t1.setNbJoueurMax(12); t1.setPrix(0); t1.setType("EDH"); t1.setAnnee(2015); t1.setMois(11); t1.setJour(23); t1.setHeure(17); t1.setMinute(30);
 		tournoiRepository.save(t1);
 
 		//Tournoi de Pétanque à Colmar le 28/11/2015 à 13h30, 20 joueurs max, 2€
-		Tournoi t2 = new Tournoi(); t2.setLieu("Colmar"); t2.setNbJoueurMax(20); t2.setPrix(2.0); t2.setType("Pétanque"); t2.setAnnee(2015); t2.setMois(11); t2.setJour(28); t2.setHeure(13); t2.setMinute(30);
+		Tournoi t2 = new Tournoi();t2.setNom("La Battaille pour Zendikar"); t2.setLieu("Colmar"); t2.setNbJoueurMax(20); t2.setPrix(10); t2.setType("Draft"); t2.setAnnee(2015); t2.setMois(11); t2.setJour(28); t2.setHeure(13); t2.setMinute(30);
 		tournoiRepository.save(t2);
 		
 		//Tournoi de Badminton à Strasbourg le 26/11/2015 à 20h, 12 joueurs max, 5€
-		Tournoi t3 = new Tournoi(); t3.setLieu("Strasbourg"); t3.setNbJoueurMax(12); t3.setPrix(5.0); t3.setType("Badminton"); t3.setAnnee(2015); t3.setMois(11); t3.setJour(26); t3.setHeure(20); t3.setMinute(0);
+		Tournoi t3 = new Tournoi(); t3.setNom("Qualifications Championnat de France"); t3.setLieu("Strasbourg"); t3.setNbJoueurMax(50); t3.setPrix(50); t3.setType("Modern"); t3.setAnnee(2015); t3.setMois(11); t3.setJour(26); t3.setHeure(20); t3.setMinute(0);
 		tournoiRepository.save(t3);
 
 		/*******************************************************************************************************************************/

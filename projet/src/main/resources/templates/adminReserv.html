@@ -83,8 +83,8 @@
 					<td></td>
 				</tr>
 				<tr th:each="reservation : ${reservation}">
-					<td th:text="${reservation.getUtilisateur()}"> </td>
-					<td th:text="${reservation.getTournoi()}"> </td>
+					<td th:text="${reservation.getUtilisateur().getPseudo()}"> </td>
+					<td th:text="${reservation.getTournoi().getNom()}"> </td>
 					<td><a th:href="@{'/removeReserv/'+${reservation.getId()}}">Supprimer</a></td>
 				</tr>
 			</table>
