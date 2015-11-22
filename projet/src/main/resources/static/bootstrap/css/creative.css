@@ -13,7 +13,11 @@ body {
 body {
     font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
 }
-
+bodyinscrit {
+	background-image:url(../img/portfolio/Day.jpg);
+	background-repeat:no-repeat;
+	background-position:center center;
+}
 hr {
     max-width: 50px;
     border-color: #f05f40;
