@@ -98,6 +98,38 @@ public class adminController {
     	return "adminUser";
     }
 	
+	@RequestMapping(value ="/removeUser/{id}", method = RequestMethod.GET)
+    public String supprimerUser(@PathVariable("id") Integer id)
+    {
+    	utilisateur.delete(id);
+    	return "redirect:/adminUser";
+    }
+	
+	@RequestMapping(value = "/modifUser", method = RequestMethod.GET)
+    public String modifyUser(@RequestParam long id, Model model,HttpSession session)
+    {
+		Utilisateur old_u = utilisateur.findOne((int) id);
+    	model.addAttribute("old_user", old_u);
+    	
+    	return "modifUser";
+    }
+	
+	@RequestMapping(value = "/modifUser", method = RequestMethod.POST)
+    public String saveModifUser(@RequestParam long id, Utilisateur modified_user,HttpSession session, RedirectAttributes redirectAttributes)
+    {
+    	
+    	Utilisateur beta = utilisateur.findOne((int) id);
+    	beta.setPseudo(modified_user.getPseudo());
+    	beta.setMotDePasse(modified_user.getMotDePasse());
+    	beta.setDroit(modified_user.getDroit());
+    	beta.setEmail(modified_user.getEmail());
+    	
+    	utilisateur.save(beta);
+    	
+    	return "redirect:/adminUser";
+    }
+	
+	
 	@RequestMapping(value="/adminReserv", method=RequestMethod.GET)
     public String listeReserv(Model model,HttpSession session) {
 		
@@ -161,5 +193,18 @@ public class adminController {
 *		return "redirect:/adminTournois";
 *	}
 * 
-* 
+* 	
+*	@RequestMapping(value = "/createUser", method = RequestMethod.GET)
+*	public String createUtilisateur(Model model) 
+*	{
+*		model.addAttribute("create_user", new Utilisateur());
+*		return "createUser";
+*	}
+*	
+*	@RequestMapping(value = "/createUser", method = RequestMethod.POST)
+*	public String saveNewUser(Utilisateur u) 
+*	{
+*		utilisateur.save(u);
+*		return "redirect:/adminUser";
+*	}
 */

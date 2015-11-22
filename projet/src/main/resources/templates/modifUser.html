@@ -7,7 +7,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
 
-    <title>Modification de Tournoi</title>
+    <title>Modification d'Utilisateur</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css"/>
@@ -81,41 +81,25 @@
       -->
     </header>
 
-    <form th:ation="@{/adminTournoi}" th:object="${old_tourn}" method="POST">
+    <form th:ation="@{/adminUser}" th:object="${old_user}" method="POST">
 		<table>
 			<tr>
-				<td>Nom</td>
-				<td><input type="text" th:field="*{nom}" /></td>
+				<td>Pseudo</td>
+				<td><input type="text" th:field="*{pseudo}" /></td>
 			</tr><tr>
-				<td>Lieu</td>
-				<td><input type="text" th:field="*{lieu}" /></td>
+				<td>Mot de passe</td>
+				<td><input type="text" th:field="*{motDePasse}" /></td>
 			</tr>
 			<tr>
-				<td>Type</td>
-				<td><input type="text" th:field="*{type}" /></td>
+				<td>Droits</td>
+				<td><input type="text" th:field="*{droit}" /></td>
 			</tr>
 			<tr>
-				<td>Prix</td>
-				<td><input type="text" th:field="*{prix}" /></td>
+				<td>Adresse e-mail</td>
+				<td><input type="text" th:field="*{email}" /></td>
 			</tr>
 			<tr>
-				<td>Joueurx Max</td>
-				<td><input type="text" th:field="*{nbJoueurMax}" /></td>
-			</tr>
-			<tr>
-				<td>Date</td>
-				<td><input type="text" th:field="*{jour}" /></td>
-				<td>/</td>
-				<td><input type="text" th:field="*{mois}" /></td>
-				<td>/</td>
-				<td><input type="text" th:field="*{annee}" /></td>
-				<td></td>
-				<td><input type="text" th:field="*{heure}" /></td>
-				<td>h</td>
-				<td><input type="text" th:field="*{minute}" /></td>
-			</tr>
-			<tr>
-				<td><button type="submit" class="btn btn-primary btn-lg active">Modifier tournoi</button></td>
+				<td><button type="submit" class="btn btn-primary btn-lg active">Modifier utilisateur</button></td>
 			</tr>
 		</table>
 	</form>
