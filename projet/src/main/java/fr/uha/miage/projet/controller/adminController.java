@@ -2,6 +2,8 @@ package fr.uha.miage.projet.controller;
 
 
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,21 +32,21 @@ public class adminController {
 	
 	
 	@RequestMapping(value="/adminTournois", method=RequestMethod.GET)
-    public String listeTournois(Model model) {
+    public String listeTournois(Model model,HttpSession session) {
 		
 		model.addAttribute("tournoi", tournoi.findAll());
     	return "adminTournois";
     }
 
 	@RequestMapping("/removeTournoi/{id}")
-    public String supprimerTournoi(@PathVariable("id") Integer idTournoi)
+    public String supprimerTournoi(@PathVariable("id") Integer idTournoi,HttpSession session)
     {
     	tournoi.delete(idTournoi);
-    	return "redirect:/adminTournoi";
+    	return "redirect:/adminTournois";
     }
 	
 	@RequestMapping(value = "/modifTournoi", method = RequestMethod.GET)
-    public String modifyBookmark(@RequestParam long id, Model model)
+    public String modifyTournoi(@RequestParam long id, Model model,HttpSession session)
     {
 		Tournoi old_t = tournoi.findOne((int) id);
     	model.addAttribute("old_tourn", old_t);
@@ -53,7 +55,7 @@ public class adminController {
     }
 	
 	@RequestMapping(value = "/modifTournoi", method = RequestMethod.POST)
-    public String saveModifBookmark(@RequestParam long id, Tournoi modified_tourn, RedirectAttributes redirectAttributes)
+    public String saveModifTournoi(@RequestParam long id, Tournoi modified_tourn,HttpSession session, RedirectAttributes redirectAttributes)
     {
     	//récupère le bon favoris et met a jour ces données
     	Tournoi beta = tournoi.findOne((int) id);
@@ -73,26 +75,33 @@ public class adminController {
     }
 	
 	@RequestMapping(value = "/createTournoi", method = RequestMethod.GET)
-	public String createBookmar(Model model,RedirectAttributes redirectAttributes) 
+	public String createTournoi(Model model,HttpSession session,RedirectAttributes redirectAttributes) 
 	{
 		model.addAttribute("tourn_create", new Tournoi());
 		return "createTournoi";
 	}
 	
 	@RequestMapping(value = "/createTournoi", method = RequestMethod.POST)
-	public String saveNewBookmark(Tournoi tourn_create, RedirectAttributes redirectAttributes) 
+	public String saveNewTournoi(Tournoi tourn_create,HttpSession session, RedirectAttributes redirectAttributes) 
 	{
 		tournoi.save(tourn_create);
-		return "redirect:/index";
+		return "redirect:/adminTournois";
 	}
 	
 	
 	
 	@RequestMapping(value="/adminUser", method=RequestMethod.GET)
-    public String listeUser(Model model) {
+    public String listeUser(Model model,HttpSession session) {
 		
 		model.addAttribute("utilisateur", utilisateur.findAll());
     	return "adminUser";
+    }
+	
+	@RequestMapping(value="/adminReserv", method=RequestMethod.GET)
+    public String listeReserv(Model model,HttpSession session) {
+		
+		model.addAttribute("reservation", reservation.findAll());
+    	return "adminReserv";
     }
     
 }

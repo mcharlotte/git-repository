@@ -43,13 +43,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="@{'/Home}" class="page-scroll">Accueil</a>
+                        <a th:href="@{'/Home}" class="page-scroll">Accueil</a>
                     </li>
                     <li>
-                        <a href="Inscription.html" class="page-scroll">Inscription</a>
+                        <a th:href="Inscription.html" class="page-scroll">Inscription</a>
                     </li>
                     <li>
-                        <a href="Connexion.html"  class="page-scroll">Connexion</a>
+                        <a th:href="Connexion.html"  class="page-scroll">Connexion</a>
                     </li>
                 </ul>
             </div>
@@ -59,7 +59,10 @@
                         <a th:href="@{'/adminTournois}" class="page-scroll">Gestion des Tournois</a>
                     </li>
                     <li>
-                        <a href="@{'/adminUser}"  class="page-scroll">Gestion des Utilisateurs</a>
+                        <a th:href="@{'/adminUser}"  class="page-scroll">Gestion des Utilisateurs</a>
+                    </li>
+                    <li>
+                    	<a th:href="@{'/adminReserv}"  class="page-scroll">Gestion des Réservations</a>
                     </li>
                 </ul>
             </div>
