@@ -6,8 +6,10 @@ import java.util.List;
 
 
 
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,13 +25,14 @@ public class Tournoi implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@OneToMany(mappedBy="tournoi",cascade=CascadeType.REMOVE)
+	@OneToMany(mappedBy="tournoi", cascade=CascadeType.REMOVE)
 	private List<Reservation> reservations = new ArrayList<Reservation>();
 
 	
 	private String lieu;
 	private double prix;
 	private String type;
+	private String nom;
 	private int nbJoueurMax;
 	private int jour;
 	private int mois;
@@ -37,6 +40,14 @@ public class Tournoi implements Serializable{
 	private int minute;
 	private int heure;
 	
+	
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 
 	public int getId() {
 		return id;
