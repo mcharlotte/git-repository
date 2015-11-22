@@ -10,7 +10,7 @@
     <title>Modification d'Utilisateur</title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" type="text/css"/>
 
     <!-- Custom Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'/>
@@ -24,7 +24,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../bootstrap/css/creative.css" type="text/css"/>
   </head>
-  <body id="page-top">
+  <body id="page-top" style="background-color:#BDBDBD">
   
   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
@@ -36,7 +36,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top"><img src="../img/portfolio/logo.jpg" width="30" height="30" BackColor="Transparent"/></a>
+				<!-- <a class="navbar-brand page-scroll" href="#page-top"><img src="../img/azorius.jpg" width="50" height="50" BackColor="Transparent"/></a> -->
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -63,39 +63,32 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-    <header>
-      <!-- <img src="../img/header.jpg"/> -->
-      <!--   
-      		<div class="header-content">
-            <div class="header-content-inner">
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
-            </div>
-        </div>   
-      -->
-    </header>
-
+<section>
     <form th:ation="@{/adminUser}" th:object="${old_user}" method="POST">
-		<table>
-			<tr>
+		<table >
+			<tr class="tabletour">
 				<td>Pseudo</td>
 				<td><input type="text" th:field="*{pseudo}" /></td>
-			</tr><tr>
+			</tr>
+			<tr class="tabletour">
 				<td>Mot de passe</td>
 				<td><input type="text" th:field="*{motDePasse}" /></td>
 			</tr>
-			<tr>
+			<tr class="tabletour">
 				<td>Droits</td>
 				<td><input type="text" th:field="*{droit}" /></td>
 			</tr>
-			<tr>
+			<tr class="tabletour">
 				<td>Adresse e-mail</td>
-				<td><input type="text" th:field="*{email}" /></td>
-				<td></td>
-				<td><button type="submit" class="btn btn-primary btn-lg active">Modifier utilisateur</button></td>
+				<td><input type="text" th:field="*{email}" /></td>			
+			</tr>
+			<tr class="tabletour">
+				<td><button type="submit">Modifier utilisateur</button></td>
+				<td/><td/>
 			</tr>
 		</table>
 	</form>
-
+</section>
 <!--
     <aside class="bg-dark">
         <div class="container text-center">

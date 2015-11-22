@@ -79,12 +79,12 @@
     <section id="search">			<!-- class="bg-primary"-->
        						<!-- class="container"-->
             <table class="table" >
-				<tr><!-- fr.uha.miage.projet.relation.model.Utilisateur@a762234 -->
+				<tr class="tabletour"><!-- fr.uha.miage.projet.relation.model.Utilisateur@a762234 -->
 					<td>Utilisateur</td>
 					<td>Tournoi</td>
 					<td></td>
 				</tr>
-				<tr th:each="reservation : ${reservation}">
+				<tr class="tabletour" th:each="reservation : ${reservation}">
 					<td th:text="${reservation.getUtilisateur().getPseudo()}"> </td>
 					<td th:text="${reservation.getTournoi().getNom()}"> </td>
 					<td><a style="color:#2A2FAB" th:href="@{'/removeReserv/'+${reservation.getId()}}">Supprimer</a></td>
