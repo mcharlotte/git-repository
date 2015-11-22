@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="../bootstrap/css/creative.css" type="text/css"/>
   </head>
   <body id="page-top">
- 
+  
   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
            <!--  Brand and toggle get grouped for better mobile display -->
@@ -41,21 +41,20 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-             <form th:object="${utilisateur}" method="post">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                    	<input  type="text" th:field="*{pseudo}"/>
+                    	<input type="text" name="login" placeholder="Login" />
                     </li>
                     <li>
-                    	<input type="password" th:field="*{motDePasse}"/>
+                    	<input type="password" name="password" placeholder="Password" />
                     </li>
                     <li>
-                       <input  type="submit" name="connexion" value="Connexion" />
+                        <a type="submit" value="Sign In" class="page-scroll">Connexion</a>
                     </li>
                     <li>
                         <a href="Inscription.html" class="page-scroll">Inscription</a>
                     </li>
-             <!--         <li>
+                    <li>
                         <a class="page-scroll" href="#search">Recherche</a>
                     </li>
                     <li>
@@ -63,9 +62,8 @@
                     </li>
                     <li>
                         <a class="page-scroll" href="#portfolio">Partenaires</a>
-                    </li>-->
+                    </li>
                 </ul>
-                </form>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -84,7 +82,22 @@
 
     <section id="search">			<!-- class="bg-primary"-->
        						<!-- class="container"-->
-           
+            <table class="table">
+				<tr>
+					<td>Nom</td>
+					<td>Date</td>
+					<td>Lieu</td>
+					<td>Nombre de participant maximum</td>
+					<td>Prix</td>	
+				</tr>
+				<tr th:each="tournoi : ${tournoi}">
+					<td th:text="${tournoi.type}"> </td>
+					<td th:text="${tournoi.lieu}"> </td>
+					<td th:text="${tournoi.jour}+'/'+${tournoi.mois}+'/'+${tournoi.annee}+' '+${tournoi.heure}+'h'+${tournoi.minute}"> </td>
+					<td th:text="${tournoi.nbJoueurMax}"> </td>
+					<td th:text="${tournoi.prix}"> </td>
+				</tr>
+			</table>
        
     </section>
 
