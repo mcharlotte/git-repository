@@ -43,30 +43,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                    	<input type="text" name="login" placeholder="Login" />
+                        <a th:href="@{/HomeAdmin}" class="page-scroll">Accueil</a>
                     </li>
-                    <li>
-                    	<input type="password" name="password" placeholder="Password" />
-                    </li>
-                    <li>
-                        <a type="submit" value="Sign In" class="page-scroll">Connexion</a>
-                    </li>
-                    <li>
-                        <a href="Inscription.html" class="page-scroll">Inscription</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#search">Recherche</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#recap">Tournois récents</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Partenaires</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a th:href="@{/adminTournois}" class="page-scroll">Gestion des Tournois</a>
                     </li>
@@ -75,6 +53,9 @@
                     </li>
                     <li>
                     	<a th:href="@{/adminReserv}"  class="page-scroll">Gestion des Réservations</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/Home}" class="page-scroll">Déconnexion</a>
                     </li>
                 </ul>
             </div>

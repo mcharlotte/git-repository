@@ -43,18 +43,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a th:href="@{/Home}" class="page-scroll">Accueil</a>
+                        <a th:href="@{/HomeAdmin}" class="page-scroll">Accueil</a>
                     </li>
-                    <li>
-                        <a th:href="Inscription.html" class="page-scroll">Inscription</a>
-                    </li>
-                    <li>
-                        <a th:href="Connexion.html"  class="page-scroll">Connexion</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a th:href="@{/adminTournois}" class="page-scroll">Gestion des Tournois</a>
                     </li>
@@ -63,6 +53,9 @@
                     </li>
                     <li>
                     	<a th:href="@{/adminReserv}"  class="page-scroll">Gestion des Réservations</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/Home}" class="page-scroll">Déconnexion</a>
                     </li>
                 </ul>
             </div>
@@ -85,22 +78,20 @@
        						<!-- class="container"-->
             <table class="table">
 				<tr>
-					<td>Nom</td>
-					<td>Date</td>
-					<td>Lieu</td>
-					<td>Nombre de participant maximum</td>
-					<td>Prix</td>
+					<td>Pseudo</td>
+					<td>Mot de passe</td>
+					<td>Droits</td>
+					<td>Adresse email</td>
 					<td></td>
 					<td></td>
 				</tr>
-				<tr th:each="tournoi : ${tournoi}">
-					<td th:text="${tournoi.type}"> </td>
-					<td th:text="${tournoi.lieu}"> </td>
-					<td th:text="${tournoi.jour}+'/'+${tournoi.mois}+'/'+${tournoi.annee}+' '+${tournoi.heure}+'h'+${tournoi.minute}"> </td>
-					<td th:text="${tournoi.nbJoueurMax}"> </td>
-					<td th:text="${tournoi.prix}"> </td>
-					<td><a th:href="@{'/modifTournoi?id='+${tournoi.getId()}}">Modifier</a></td>
-					<td><a th:href="@{'/removeTournoi/'+${tournoi.getId()}}">Supprimer</a></td>
+				<tr th:each="utilisateur : ${utilisateur}">
+					<td th:text="${utilisateur.pseudo}"> </td>
+					<td th:text="${utilisateur.motDePasse}"> </td>
+					<td th:text="${utilisateur.droit}"> </td>
+					<td th:text="${utilisateur.email}"> </td>
+					<td><a th:href="@{'/modifUser?id='+${utilisateur.getId()}}">Modifier</a></td>
+					<td><a th:href="@{'/removeUser/'+${utilisateur.getId()}}">Supprimer</a></td>
 				</tr>
 			</table>
        
