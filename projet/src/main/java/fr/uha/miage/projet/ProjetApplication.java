@@ -42,7 +42,7 @@ public class ProjetApplication implements CommandLineRunner{
 
 		//Tournoi de Pétanque à Colmar le 28/11/2015 à 13h30, 20 joueurs max, 2€
 
-		Tournoi t2 = new Tournoi();t2.setNom("La Battaille pour Zendikar"); t2.setLieu("Colmar"); t2.setNbJoueurMax(20); t2.setPrix(10); t2.setType("Draft"); t2.setAnnee(2015); t2.setMois(11); t2.setJour(28); t2.setHeure(13); t2.setMinute(30);
+		Tournoi t2 = new Tournoi();t2.setNom("La Bataille pour Zendikar"); t2.setLieu("Colmar"); t2.setNbJoueurMax(20); t2.setPrix(10); t2.setType("Draft"); t2.setAnnee(2015); t2.setMois(11); t2.setJour(28); t2.setHeure(13); t2.setMinute(30);
 		tournoiRepository.save(t2);
 		
 		//Tournoi de Badminton à Strasbourg le 26/11/2015 à 20h, 12 joueurs max, 5€
