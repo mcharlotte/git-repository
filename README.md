@@ -27,6 +27,7 @@ En tant qu'utilisateur:
 - réserver une place pour un tournois existant
 - annuler une réservation existante
 - se deconnecter
+
 En tant qu'administrateur, une fois connecté:
 - ajouter un tournoi
 - modifier un tournoi existant
