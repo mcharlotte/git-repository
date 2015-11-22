@@ -84,20 +84,15 @@
     <section id="search">			<!-- class="bg-primary"-->
        						<!-- class="container"-->
             <table class="table">
-				<tr>
+				<tr><!-- fr.uha.miage.projet.relation.model.Utilisateur@a762234 -->
 					<td>Utilisateur</td>
 					<td>Tournoi</td>
 					<td></td>
-					<td></td>
 				</tr>
-				<tr th:each="tournoi : ${tournoi}">
-					<td th:text="${tournoi.type}"> </td>
-					<td th:text="${tournoi.lieu}"> </td>
-					<td th:text="${tournoi.jour}+'/'+${tournoi.mois}+'/'+${tournoi.annee}+' '+${tournoi.heure}+'h'+${tournoi.minute}"> </td>
-					<td th:text="${tournoi.nbJoueurMax}"> </td>
-					<td th:text="${tournoi.prix}"> </td>
-					<td><a th:href="@{'/modifTournoi?id='+${tournoi.getId()}}">Modifier</a></td>
-					<td><a th:href="@{'/removeTournoi/'+${tournoi.getId()}}">Supprimer</a></td>
+				<tr th:each="reservation : ${reservation}">
+					<td th:text="${reservation.getUtilisateur()}"> </td>
+					<td th:text="${reservation.getTournoi()}"> </td>
+					<td><a th:href="@{'/removeReserv/'+${reservation.getId()}}">Supprimer</a></td>
 				</tr>
 			</table>
        

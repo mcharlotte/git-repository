@@ -43,23 +43,26 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="@{'/Home}" class="page-scroll">Accueil</a>
+                        <a th:href="@{/Home}" class="page-scroll">Accueil</a>
                     </li>
                     <li>
-                        <a href="Inscription.html" class="page-scroll">Inscription</a>
+                        <a th:href="Inscription.html" class="page-scroll">Inscription</a>
                     </li>
                     <li>
-                        <a href="Connexion.html"  class="page-scroll">Connexion</a>
+                        <a th:href="Connexion.html"  class="page-scroll">Connexion</a>
                     </li>
                 </ul>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a th:href="@{'/adminTournois}" class="page-scroll">Gestion des Tournois</a>
+                        <a th:href="@{/adminTournois}" class="page-scroll">Gestion des Tournois</a>
                     </li>
                     <li>
-                        <a href="@{'/adminUser}"  class="page-scroll">Gestion des Utilisateurs</a>
+                        <a th:href="@{/adminUser}"  class="page-scroll">Gestion des Utilisateurs</a>
+                    </li>
+                    <li>
+                    	<a th:href="@{/adminReserv}"  class="page-scroll">Gestion des Réservations</a>
                     </li>
                 </ul>
             </div>
@@ -81,6 +84,9 @@
     <form th:ation="@{/index}" th:object="${old_tourn}" method="POST">
 		<table>
 			<tr>
+				<td>Nom</td>
+				<td><input type="text" th:field="*{nom}" /></td>
+			</tr><tr>
 				<td>Lieu</td>
 				<td><input type="text" th:field="*{lieu}" /></td>
 			</tr>

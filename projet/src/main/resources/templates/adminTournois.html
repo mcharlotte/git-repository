@@ -86,6 +86,7 @@
             <table class="table">
 				<tr>
 					<td>Nom</td>
+					<td>Type</td>
 					<td>Date</td>
 					<td>Lieu</td>
 					<td>Nombre de participant maximum</td>
@@ -93,7 +94,8 @@
 					<td></td>
 					<td></td>
 				</tr>
-				<tr th:each="tournoi : ${tournoi}">
+				<tr th:each="tournoi : ${tournoi}">				
+					<td th:text="${tournoi.nom}"> </td>
 					<td th:text="${tournoi.type}"> </td>
 					<td th:text="${tournoi.lieu}"> </td>
 					<td th:text="${tournoi.jour}+'/'+${tournoi.mois}+'/'+${tournoi.annee}+' '+${tournoi.heure}+'h'+${tournoi.minute}"> </td>

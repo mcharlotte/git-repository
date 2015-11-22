@@ -81,6 +81,10 @@
     <form th:ation="@{/index}" th:object="${tourn_create}" method="POST">
 		<table>
 			<tr>
+				<td>Nom</td>
+				<td><input type="text" th:field="*{nom}" /></td>
+			</tr>
+			<tr>
 				<td>Lieu</td>
 				<td><input type="text" th:field="*{lieu}" /></td>
 			</tr>
