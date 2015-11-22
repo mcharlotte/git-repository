@@ -11,9 +11,6 @@ html {
 }
 body {
   margin: 0;
-  	background-image:url(../img/portfolio/Day.jpg);
-	background-repeat:no-repeat;
-	background-position:center center;
 }
 article,
 aside,
@@ -21,7 +18,7 @@ details,
 figcaption,
 figure,
 footer,
-header,
+header
 hgroup,
 main,
 menu,
@@ -30,6 +27,23 @@ section,
 summary {
   display: block;
 }
+/*
+header{
+	display: block;
+	background-image: url("img/header.jpg");
+    background-repeat: no-repeat;
+}
+#page-header {
+	display: block;
+    background-image: url("img/header.jpg");
+    background-repeat: no-repeat;
+}
+.header{
+	display: block;
+	background-image: url("img/header.jpg");
+    background-repeat: no-repeat;
+}
+*/
 audio,
 canvas,
 progress,
@@ -190,6 +204,28 @@ td,
 th {
   padding: 0;
 }
+.tabletour{
+	background-color: #FFFFFF;
+	opacity : 0.5;
+}
+/*
+.bodysubscribe{
+color:black;
+background-color:white;
+background-image:url(../img/Day.jpg);
+background-repeat:no-repeat;
+background-width:100%;
+background-height:100%;
+}
+body{
+color:black;
+background-color:white;
+background-image:url(../img/Day.jpg);
+background-repeat:no-repeat;
+background-width:100%;
+background-height:100%;
+}*/
+
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
   *,
@@ -4217,6 +4253,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   min-height: 50px;
+  max-height: 80px;
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
@@ -4325,7 +4362,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   height: 50px;
-  padding: 15px 15px;
+  padding: 0px 15px;
   font-size: 18px;
   line-height: 20px;
 }
