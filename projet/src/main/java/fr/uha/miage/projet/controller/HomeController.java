@@ -10,6 +10,8 @@ import fr.uha.miage.projet.relation.repository.UtilisateurRepository;
 @Controller
 public class HomeController {
 
+	public static int idUtilisateur = 0;
+	
 	@Autowired
 	UtilisateurRepository utilisateur;
 	
@@ -29,10 +31,12 @@ public class HomeController {
 				//Cas où l'utilisateur est un admin
 				if(user.getDroit()==1)
 				{
+					idUtilisateur=user.getId();
 					return "redirect:HomeAdmin";
 				}
 				else
 				{
+					idUtilisateur=user.getId();
 					return "redirect:HomeUtilisateur";
 				}
 				
