@@ -60,6 +60,8 @@ public class ProjetApplication implements CommandLineRunner{
 		utilisateurRepository.save(u2);		
 		
 		Utilisateur u3 = new Utilisateur(); u3.setPseudo("Charlotte"); u3.setMotDePasse("charlottemdp"); u3.setEmail("charlotte@uha.fr"); 		utilisateurRepository.save(u3);
+		utilisateurRepository.save(u3);		
+		
 		
 		Utilisateur u4 = new Utilisateur(); u4.setPseudo("Audrey"); u4.setMotDePasse("audreymdp"); u4.setEmail("audrey@uha.fr");
 		utilisateurRepository.save(u4);
@@ -73,6 +75,9 @@ public class ProjetApplication implements CommandLineRunner{
 		//droit admin
 		Utilisateur u7 = new Utilisateur(); u7.setPseudo("Admin"); u7.setMotDePasse("admin"); u7.setEmail("admin@uha.fr"); u7.setDroit(1);
 		utilisateurRepository.save(u7);
+		
+		Utilisateur u8 = new Utilisateur(); u8.setPseudo("Noob"); u8.setMotDePasse("noob"); u8.setEmail("noob@uha.fr"); 
+		utilisateurRepository.save(u8);
 		
 		/*******************************************************************************************************************************/
 		/****************************************************** RÉSERVATIONS ***********************************************************/
@@ -115,7 +120,9 @@ public class ProjetApplication implements CommandLineRunner{
 		Reservation r12 = new Reservation(); r12.setTournoi(t3); r12.setUtilisateur(u3); reservationRepository.save(r12);
 	
 		
-
+		Reservation r13 = new Reservation(); r13.setTournoi(t3); r13.setUtilisateur(u8); reservationRepository.save(r13);
+		
+		Reservation r14 = new Reservation(); r14.setTournoi(t3); r14.setUtilisateur(u1); reservationRepository.save(r14);
 	}
 }
 

@@ -1,6 +1,7 @@
 package fr.uha.miage.projet.controller;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,38 +32,52 @@ public class HomeUtilisateurController {
 	@RequestMapping(value="/HomeUtilisateur", method=RequestMethod.GET)
 	public String AffichageFormulaire(Utilisateur u, Model model) {
 		
-		String inOut = "";
-		
 		u =utilisateur.findOne(HomeController.idUtilisateur);
 		model.addAttribute("tournoi", tournoi.findAll());
 		model.addAttribute(u);
-		
+		String inOut="";
 		List<Reservation> resaU = u.getReservations();
+		ArrayList<Integer> tournoiRejoins = new ArrayList<Integer>();
 		for(Tournoi t : tournoi.findAll())
 		{
-			for(int i=0;i<resaU.size();i++)
+			for(int i=0;i<resaU.size() ;i++)
 			{
-				if(t.getReservations().contains(resaU.get(i)))
+				for(int j=0;j<t.getReservations().size();j++)
 				{
-					resaU.remove(resaU.get(i));
-					inOut="Quitter";				
+					if(resaU.get(i)==t.getReservations().get(j))
+					{
+						tournoiRejoins.add(t.getId());
+						inOut="Quitter";
+						
+					}
 				}
-				else
-				{
-					inOut="Rejoindre";
-				}
-				
 			}
-			model.addAttribute("inout", inOut);	
-		}
+			if(inOut!="Quitter")
+			{
+				model.addAttribute("inout", "Quitter");
+				inOut="";
+				System.out.print("FUCK\n");
+			}
+			else
+			{
+				model.addAttribute("inout", "Rejoindre");
+				inOut="";
+				System.out.print("CE PROJET\n");
+			}			
 			
+		}
+		
+		System.out.print(tournoiRejoins);
+			//model.addAttribute("inout", "Rejoindre");	
+		
+		//System.out.print(inOut+"\n");	
 		return "/HomeUtilisateur";
 
-    }
+}
 	
 	@RequestMapping(value="/HomeUtilisateur", method=RequestMethod.POST)
 	public String Deconnexion(Utilisateur u, Model model) {
-		return "/Home";
+		return "redirect:/Home";
 	}
     
 	
