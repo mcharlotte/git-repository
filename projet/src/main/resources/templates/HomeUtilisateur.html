@@ -44,17 +44,14 @@
                 <form th:object="${utilisateur}" method="post">
 	                <ul class="nav navbar-nav navbar-right input input-lg">
 	                    <li>
-	                    	<div margin ="15px" class="page-scroll" th:text="'Bonjour, '+*{pseudo} "></div>
+	                    	<div style="margin: 4 20px" class="page-scroll" th:text="'Bonjour, '+*{pseudo} "></div>
 	                    </li>
 	                    <li>
 	                       <input class="btn" type="submit" name="deconnexion" value="Déconnexion" />
 	                    </li>
-	                   <li>
-                        <a href="Reservation.html">Faire une réservation</a>
-                   		 </li>
-                   		 <li>
-                        <a href="ModificationUtilisateur.html">Inscription</a>
-                   		 </li>
+                   		<li>
+                        	<a href="ModificationUtilisateur.html">Modifier mon compte</a>
+                   		</li>
 	             <!--         <li>
 	                        <a class="page-scroll" href="#search">Recherche</a>
 	                    </li>

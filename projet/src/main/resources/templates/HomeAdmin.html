@@ -43,9 +43,6 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right a input input-lg">
                     <li>
-                    	<input type="text" placeholder="Login"/>
-                    </li>
-                    <li>
                         <a th:href="@{/HomeAdmin}" class="page-scroll">Accueil</a>
                     </li>
                     <li>
@@ -67,26 +64,6 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <section id="search">			<!-- class="bg-primary"-->
-       						<!-- class="container"-->
-            <table class="table">
-				<tr class="tabletour">
-					<td>Nom</td>
-					<td>Date</td>
-					<td>Lieu</td>
-					<td>Nombre de participant maximum</td>
-					<td>Prix</td>	
-				</tr>
-				<tr th:each="tournoi : ${tournoi}" class="tabletour">
-					<td th:text="${tournoi.type}"> </td>
-					<td th:text="${tournoi.lieu}"> </td>
-					<td th:text="${tournoi.jour}+'/'+${tournoi.mois}+'/'+${tournoi.annee}+' '+${tournoi.heure}+'h'+${tournoi.minute}"> </td>
-					<td th:text="${tournoi.nbJoueurMax}"> </td>
-					<td th:text="${tournoi.prix}"> </td>
-				</tr>
-			</table>
-       
-    </section>
 <!--
     <aside class="bg-dark">
         <div class="container text-center">

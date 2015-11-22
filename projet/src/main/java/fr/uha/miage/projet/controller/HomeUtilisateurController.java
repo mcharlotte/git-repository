@@ -4,11 +4,15 @@ package fr.uha.miage.projet.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import fr.uha.miage.projet.relation.model.Reservation;
 import fr.uha.miage.projet.relation.model.Tournoi;
@@ -56,13 +60,13 @@ public class HomeUtilisateurController {
 			{
 				model.addAttribute("inout", "Quitter");
 				inOut="";
-				System.out.print("FUCK\n");
+				System.out.print("OUT\n");
 			}
 			else
 			{
 				model.addAttribute("inout", "Rejoindre");
 				inOut="";
-				System.out.print("CE PROJET\n");
+				System.out.print("IN\n");
 			}			
 			
 		}
@@ -80,5 +84,24 @@ public class HomeUtilisateurController {
 		return "redirect:/Home";
 	}
     
+	@RequestMapping(value = "/ModificationUtilisateur", method = RequestMethod.GET)
+    public String modifyUser(Model model)
+    {
+		Utilisateur old_u = utilisateur.findOne(HomeController.idUtilisateur);
+    	model.addAttribute("utilisateur", old_u);
+    	
+    	return "ModificationUtilisateur";
+    }
+	
+	@RequestMapping(value = "/ModificationUtilisateur", method = RequestMethod.POST) 
+	public String saveModifUser(Utilisateur u) { 
+		Utilisateur beta = utilisateur.findOne(HomeController.idUtilisateur); 
+		beta.setPseudo(u.getPseudo()); beta.setMotDePasse(u.getMotDePasse()); 
+		beta.setDroit(u.getDroit()); beta.setEmail(u.getEmail()); 
+		
+		utilisateur.save(beta); 
+		
+		return "redirect:/HomeUtilisateur"; 
+		}
 	
 }

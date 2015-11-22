@@ -204,27 +204,12 @@ td,
 th {
   padding: 0;
 }
+
+
 .tabletour{
 	background-color: #FFFFFF;
 	opacity : 0.5;
 }
-/*
-.bodysubscribe{
-color:black;
-background-color:white;
-background-image:url(../img/Day.jpg);
-background-repeat:no-repeat;
-background-width:100%;
-background-height:100%;
-}
-body{
-color:black;
-background-color:white;
-background-image:url(../img/Day.jpg);
-background-repeat:no-repeat;
-background-width:100%;
-background-height:100%;
-}*/
 
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
@@ -289,6 +274,7 @@ background-height:100%;
   }
   .table {
     border-collapse: collapse !important;
+    
   }
   .table td,
   .table th {
