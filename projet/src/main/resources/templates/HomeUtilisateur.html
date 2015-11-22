@@ -41,29 +41,27 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                    	<input type="text" name="login" placeholder="Login" />
-                    </li>
-                    <li>
-                    	<input type="password" name="password" placeholder="Password" />
-                    </li>
-                    <li>
-                        <a type="submit" value="Sign In" class="page-scroll">Connexion</a>
-                    </li>
-                    <li>
-                        <a href="Inscription.html" class="page-scroll">Inscription</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#search">Recherche</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#recap">Tournois récents</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Partenaires</a>
-                    </li>
-                </ul>
+                <form th:object="${utilisateur}" method="post">
+	                <ul class="nav navbar-nav navbar-right">
+	                    <li>
+	                    	<div class="page-scroll" th:text="'Bonjour, '+*{pseudo} "></div>
+	                 
+	                    </li>
+	                    <li>
+	                       <input  type="submit" name="deconnexion" value="Déconnexion" />
+	                    </li>
+	                   
+	             <!--         <li>
+	                        <a class="page-scroll" href="#search">Recherche</a>
+	                    </li>
+	                    <li>
+	                        <a class="page-scroll" href="#recap">Tournois récents</a>
+	                    </li>
+	                    <li>
+	                        <a class="page-scroll" href="#portfolio">Partenaires</a>
+	                    </li>-->
+	                </ul>
+                </form>
             </div>
             <!-- /.navbar-collapse -->
         </div>
