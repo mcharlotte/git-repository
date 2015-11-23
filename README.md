@@ -35,8 +35,8 @@ Fonctionnalités :
 En tant qu'utilisateur:
 - s'inscrire
 - se connecter
-- réserver une place pour un tournois existant
-- annuler une réservation existante
+- visualiser les tournois existants
+- modifier ses informations
 - se deconnecter
 
 En tant qu'administrateur, une fois connecté:
