@@ -17,6 +17,9 @@ Installation :
   Les autorisations vous ont normalement été données, en cas de problème veuillez la responsable du repository à     l'adresse suivante: charlotte.messmer2@gmail.com
 - Une fois le projet importé, lancer "ProjetApplication.java" en tant qu'application java
 - Ouvrir un navigateur internet et acceder à la page localhost:8080/Home
+- 
+- 
+- Pour se connecter en mode administrateur, l'identifient est "Admin" et le mot de passe est "admin"
 
 
 
